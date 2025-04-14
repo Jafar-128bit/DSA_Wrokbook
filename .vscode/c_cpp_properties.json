@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\MinGW\\include",
+                "C:\\MinGW\\include\\c++\\13.2.0",
+                "C:\\MinGW\\include\\boost",
+                "C:\\MinGW\\include\\glbinding",
+                "C:\\MinGW\\include\\GLFW",
+                "C:\\MinGW\\include\\glm"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:\\MinGW\\bin\\gcc"
+        }
+    ],
+    "version": 4
+}

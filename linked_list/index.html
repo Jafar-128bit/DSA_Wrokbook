@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singly Linked List Visualization</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        canvas {
+            display: block;
+            /* Removes scrollbar */
+        }
+
+        #menu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: white;
+            padding: 10px;
+            border: 1px solid black;
+            z-index: 1;
+        }
+
+        #menu button {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #sideMenu {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+
+            position: fixed;
+            top: 0;
+            left: -360px;
+
+            width: 300px;
+            height: 100%;
+
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+            background-color: #f8f9fa;
+            border-left: 1px solid #ddd;
+            transition: left 0.3s;
+
+            padding: 20px;
+
+            overflow: hidden;
+        }
+
+        #closeSideMenu {
+            cursor: pointer;
+            color: red;
+            font-weight: bold;
+        }
+
+        .nodeValue {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+
+            width: 90%;
+            height: max-content;
+
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            text-align: left;
+            letter-spacing: 1px;
+
+            word-wrap: break-word;
+            /* Allow long words to be broken onto the next line */
+            word-break: break-all;
+            /* Break words at arbitrary points if needed */
+            overflow-wrap: break-word;
+            /* Ensure text wraps within the container */
+            white-space: pre-wrap;
+            /* Preserve whitespace and break lines as needed */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu">
+        <button id="addList">Add List</button>
+        <button id="removeList">Remove List</button>
+        <button id="addNode">Add Node</button>
+        <button id="removeNode">Remove Node</button>
+        <button id="connectNode">Connect Foreign Node</button>
+        <button id="disconnectNode">Remove Foreign Node</button>
+    </div>
+    <div id="sideMenu">
+        <span id="closeSideMenu">[Close]</span>
+        <h3>Node Details</h3>
+        <p id="nodeId"></p>
+        <p id="nodeValue" class="nodeValue"></p>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="data.js"></script>
+    <script src="singly_linked_list.js"></script>
+</body>
+
+</html>

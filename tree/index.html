@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary Tree Visualization with D3.js</title>
+  <style>
+    .node circle {
+      fill: #fff;
+      stroke: rgb(255, 153, 36);
+      stroke-width: 2px;
+    }
+    .node text {
+      font: 12px sans-serif;
+    }
+    .link {
+      fill: none;
+      stroke: #3a7fff;
+      stroke-width: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div id="tree-container"></div>
+  <button id="toggle-layout">Toggle Layout</button>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="./tree/binaryTree.js"></script>
+</body>
+</html>
