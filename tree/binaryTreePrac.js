@@ -125,8 +125,8 @@ const _1 = new Node(3);
 const _2 = new Node(11);
 const _3 = new Node(4);
 const _4 = new Node(5);
-const _5 = new Node(2);
-const _6 = new Node(1);
+const _5 = new Node(7);
+const _6 = new Node(12);
 
 _1.left = _2;
 _1.right = _3;
@@ -163,6 +163,43 @@ const treeSum_Itrative = (root) => {
 console.log("Tree Sum Itrative Version");
 console.log(treeSum_Itrative(_1));
 
-
 /* Find the minium value in the tree */
-/* Find */
+
+/* Itrative Value */
+const treeMinValue_Itrative = (root) => {
+  if (root === null) return Infinity; //base case
+  let stack = [root];
+  let minValue = Infinity;
+  while (stack.length > 0) {
+    const current = stack.pop();
+
+    if (current.val < minValue) minValue = current.val;
+    if (current.left) stack.push(current.left);
+    if (current.right) stack.push(current.right);
+  }
+  return minValue;
+}
+
+console.log("Tree Min Value Itrative Version");
+console.log(treeMinValue_Itrative(_1));
+
+/* Recurcive Way */
+const treeMinValue_Recursive = (root) => {
+  if (root === null) return Infinity; //base case
+  return Math.min(root.val, treeMinValue_Recursive(root.left), treeMinValue_Recursive(root.right));
+}
+
+console.log("Tree Min Value Recursive Version");
+console.log(treeMinValue_Recursive(_1));
+
+
+/* Max root to leaf path sum problem */
+const maxPathSum = (root) => {
+  if (root === null) return -Infinity; //base case
+  if(root.left === null && root.right === null) return root.val; //base case
+  const maxChildPathSum = Math.max(maxPathSum(root.left), maxPathSum(root.right));
+  return maxChildPathSum + root.val;
+}
+
+console.log("Max Path Sum Recursive Version");
+console.log(maxPathSum(_1));
